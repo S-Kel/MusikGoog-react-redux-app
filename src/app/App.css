@@ -1,0 +1,145 @@
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 5vmin;
+}
+
+.App-header {
+    background-color: #282c34;
+    min-height: 6vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    border-bottom: 3px solid #303236;
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+
+/* Artist Style */
+
+.profile {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-info {
+    margin-left: 10px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.profile-img img {
+    width: 10rem;
+    height: 10rem;
+    border: 3px solid #fafafa;
+    border-radius: 5rem;
+    object-fit: cover;
+}
+
+.profile-name {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.profile-followers {
+    font-size: 1.5rem;
+    /* color: teal; */
+}
+
+.profile-genres {
+    font-size: 1.0rem;
+}
+
+.profile-followers,
+.profile-genres {
+    margin-top: 5px;
+    /* background: yellow; */
+}
+
+
+/* Artist's tract styles */
+
+.artist-track,
+.artist-tractImg,
+.artist-track-play {
+    width: 22rem;
+    height: 22rem;
+}
+
+.artist-track {
+    display: inline-block;
+    margin: 10px;
+    text-align: left;
+    cursor: pointer;
+    border: 3px solid #efefef;
+    position: relative;
+}
+
+.artist-tractImg,
+.artist-track-text,
+.artist-track-play,
+.artist-play-inner {
+    position: absolute;
+}
+
+.artist-tractImg {
+    border: 3px solid #afafaf;
+    border-radius: 3px;
+    object-fit: cover;
+    transition: all 0.5s ease-in;
+}
+
+.artist-track-text {
+    color: #fefefe;
+    font-weight: 600;
+    opacity: 0.75;
+    width: 22rem;
+    text-align: center;
+    bottom: 0;
+    padding: .75rem;
+    background: rgb(86, 229, 248);
+}
+
+.artist-play-inner {
+    text-align: center;
+    font-size: 2.5rem;
+    background: #333;
+    border-radius: 3rem;
+    width: 6rem;
+    height: 6rem;
+    line-height: 6rem;
+    color: #fefefe;
+    margin-top: 8rem;
+    margin-left: 8rem;
+    opacity: 0;
+    transition: all 0.5s ease-in;
+}
+
+.artist-tractImg,
+.artist-play-inner:hover {
+    opacity: .65;
+}
+
+
+/* TODO: delete below */
+
+.test {
+    background: #efefef;
+}
+
+
+/* .ui.input input {
+    color: red;
+} */
