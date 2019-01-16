@@ -23,9 +23,9 @@ class SearchArtist extends Component{
         };
 
         await this.props.fetchArtist(fetchURL, options);       
-        const { artist} = this.props;
-        console.log("This.props.artist", artist);
-        if (artist) {
+        const { artist, error} = this.props;
+
+       if (artist && error===null) {
             fetchURL = `${ALBUM_URL}${artist.id}/top-tracks?country=US&`;
             await this.props.fetchTracks(fetchURL, options);
         }
@@ -45,14 +45,15 @@ class SearchArtist extends Component{
     }
 
     render(){
-        // const { search, searchArtist, onEnterKey } = props;
-        return (
+        const { error } = this.props;
+        return (            
             <div>
                 <Segment placeholder>
                     <Grid stackable textAlign='center'>
                         <Grid.Row verticalAlign='middle'>
                             <Grid.Column>
                                 <Header icon color="teal">
+                                    {error !== null && (<div style={{ color: 'red', backgroundColor: 'yellow', padding: '10px', marginBottom: '20px'}}><em>Could not fetch from spotify!!!</em> update your Access key</div>)}
                                     <Icon name='search' />
                                     Find an Artist
                                 </Header>
@@ -75,10 +76,12 @@ class SearchArtist extends Component{
 PropTypes.SearchArtist= {
     fetchArtist: PropTypes.func.isRequired,
     fetchTracks: PropTypes.func.isRequired,
-    artist: PropTypes.object.isRequired
+    artist: PropTypes.object.isRequired,
+    error: PropTypes.object.isRequired
 }
 
 const mapStateTopProps = state => ({
-    artist: state.profile.artist
+    artist: state.profile.artist,
+    error: state.profile.error
 });
 export default connect(mapStateTopProps, { fetchArtist, fetchTracks })(SearchArtist);

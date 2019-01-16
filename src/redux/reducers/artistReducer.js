@@ -10,7 +10,7 @@ const initialState = {
         { id: 'xab-12ch-123h-faf3', name: '50 Cent Many Men', url1: 'https://media.gettyimages.com/photos/recording-artist-curtis-50-cent-jackson-of-the-music-group-gunit-picture-id455835418?s=612x612', album: { images: [{ url: 'https://media.gettyimages.com/photos/recording-artist-curtis-50-cent-jackson-of-the-music-group-gunit-picture-id455835418?s=612x612' }] } },
         { id: 'xab-12ch-123h-faf4', name: '50 Cent Window Shopper', url1: 'https://cdn.shopify.com/s/files/1/2551/3076/files/50-Cent-Signo-del-Zodiaco-Cancer-2_large.jpg?v=1522177911', album: { images: [{ url: 'https://cdn.shopify.com/s/files/1/2551/3076/files/50-Cent-Signo-del-Zodiaco-Cancer-2_large.jpg?v=1522177911' }] } },
     ],
-    error: {}
+    error: null
 };
 
 export default (state = initialState, action) => {

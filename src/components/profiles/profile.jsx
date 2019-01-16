@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import PropTypes from 'prop-types';
 import {Container} from 'semantic-ui-react';
-import '../app/App.css';
-import Genre from './genres/genre'
+import '../../app/App.css';
+import Genre from '../genres/genre'
 
 class Profile extends Component {
   render() { 
@@ -24,6 +24,7 @@ class Profile extends Component {
     );
   }
 }
+
 PropTypes.SearchArtist = {
   artist: PropTypes.object.isRequired
 }
@@ -32,4 +33,3 @@ const mapStateTopProps = state => ({
 });
 
 export default connect(mapStateTopProps, {})(Profile);
-// export default Profile;

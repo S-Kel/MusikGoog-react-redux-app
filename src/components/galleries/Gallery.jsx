@@ -5,15 +5,13 @@ import {Container} from 'semantic-ui-react';
 import '../../app/App.css';
 import GalleryItem from "./galleryItem";
  
-
 class Gallery extends Component {
   render() { 
     const { tracks } = this.props;
     return (        
       <div className="tests">
         <Container> {tracks.map((track,key) => <GalleryItem key={track.id} track={track} />)}</Container>     
-      </div>
-    
+      </div>    
     );
   }
 }
