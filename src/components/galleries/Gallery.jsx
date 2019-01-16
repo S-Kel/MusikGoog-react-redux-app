@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
+import PropTypes from 'prop-types';
 import {Container} from 'semantic-ui-react';
 import '../../app/App.css';
 import GalleryItem from "./galleryItem";
  
 
 class Gallery extends Component {
-//  state={
-//    tracks: []
-//  };
-
   render() { 
     const { tracks } = this.props;
     return (        
@@ -19,7 +17,14 @@ class Gallery extends Component {
     );
   }
 }
-  
- export default Gallery;
+
+PropTypes.SearchArtist = {
+  tracks: PropTypes.array.isRequired,
+}
+const mapStateTopProps = state => ({
+    tracks: state.profile.tracks
+});
+
+export default connect(mapStateTopProps, {})(Gallery);
 
  

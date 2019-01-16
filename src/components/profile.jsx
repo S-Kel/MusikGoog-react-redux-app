@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
+import PropTypes from 'prop-types';
 import {Container} from 'semantic-ui-react';
 import '../app/App.css';
 import Genre from './genres/genre'
 
 class Profile extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {  }
-  }
   render() { 
     const {artist} = this.props;
     return ( 
@@ -26,5 +24,12 @@ class Profile extends Component {
     );
   }
 }
+PropTypes.SearchArtist = {
+  artist: PropTypes.object.isRequired
+}
+const mapStateTopProps = state => ({
+  artist: state.profile.artist
+});
 
-export default Profile;
+export default connect(mapStateTopProps, {})(Profile);
+// export default Profile;
